@@ -11,8 +11,24 @@
         min-height: 100%;
       }
     </style>
-    <video autoplay loop id="myVideo">
+    <video id="myVideo" controls>
       <source src="https://github.com/maciejlewandowskii/filipflip/blob/main/filipflip.mp4?raw=true" type="video/mp4">
+      Your browser does not support HTML5 video.
     </video>
+
+    <script>
+      var video = document.getElementById("myVideo");
+
+      // Toggle fullscreen mode when the user clicks on the video
+      video.addEventListener("click", function() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      });
+    </script>
   </body>
 </html>
